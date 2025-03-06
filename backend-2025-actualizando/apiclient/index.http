@@ -54,3 +54,18 @@ Content-Type: image/jpeg
 
 ###
 GET http://localhost:3000/Raccoon-1739965519599.jpg
+
+
+
+###
+POST http://localhost:3000/api/users HTTP/1.1
+Content-Type: application/json
+api_key: Api-publica-123
+
+{
+    "name": "Marcos",
+    "email": "micrreo2@correo.es",
+    "age":37,
+    "password": "12345",
+    "role": "admin"
+}

@@ -1,6 +1,7 @@
 const express = require('express')
 const {getItem, getItems, updateItem, createItem, deleteItem} = require ('../controllers/users.js')
 const { validatorCreateItem } = require ("../validators/users.js")
+const customHeader = require("../midldleware/customHeaders.js")
 
 
 const userRouter = express.Router();
@@ -13,6 +14,6 @@ userRouter.put('/:email', (req, res) => {
     updateItem(req, res);
 });
 userRouter.delete('/:email', deleteItem);
-userRouter.post("/", validatorCreateItem, createItem);
+userRouter.post("/", validatorCreateItem, customHeader, createItem);
 
 module.exports = userRouter;
